@@ -1,74 +1,110 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-# ZSH_THEME="ys"
-#ZSH_THEME="agnoster"
-#ZSH_THEME="bullet-train"
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/pattylaio/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
-# command line 左邊想顯示的內容
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable vcs laravel_version) 
-# command line 右邊想顯示的內容
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status ram load time) # <= right prompt 設了 "time"
+# 左側
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
+	os_icon context laravel_version 
+	dir dir_writable vcs root_indicator ssh
+)
 
+# 右側
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs ram load time)
+# 若當前登入的帳號為你的帳號 xxx，就不用特別顯示出來
+#DEFAULT_USER="pattylaio"
 # 使用 nerd font 時可以顯示更多 icon。詳情請參考 powerlevel9k wiki 
 POWERLEVEL9K_MODE='nerdfont-complete'
+# HISTORY 顯示時間
+HIST_STAMPS="yyyy-mm-dd"
 
-# 若當前登入的帳號為你的帳號 xxx，就不用特別顯示出來
-DEFAULT_USER="chingwei"
+POWERLEVEL9K_COLOR_SCHEME='light'
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+POWERLEVEL9K_CONTEXT_TEMPLATE="\uF415"	# '\uF09C'
 
-# Set to this to use case-sensitive completion
+
+if [[ $UID == 0 || $EUID == 0 ]]; then
+
+else
+
+fi
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment this to disable bi-weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
-# Uncomment to change how often before auto-updates occur? (in days)
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
 
-# Uncomment following line if you want to disable colors in ls
+# Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
-# Uncomment following line if you want to disable autosetting terminal title.
+# Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
+# Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
 
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment following line if you want to  shown in the command execution time stamp 
-# in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
-# yyyy-mm-dd
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# plugins=(git)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  git
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+  sublime
+)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# # Preferred editor for local and remote sessions
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
@@ -79,26 +115,13 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-alias ptt="ssh bbsu@ptt.cc"
-
-alias tunnel='ssh -N -p 2222 -c 3des chingwei@localhost -L 1111/10.11.10.13/22 -L 5432/10.11.2.31/5432 -L 1122/10.1.1.4/22'
-alias oss='ssh -P -Nf -p 22 -c 3des xuite@210.59.147.232 -L 2222/172.30.211.1/22'
-
-
-alias gst='git status'
-alias gd=' LESSCHARSET=utf-8 git diff'
-alias gc='git commit'
-alias gps='git push'
-alias gpl='git pull'
-
-alias dev='cd ~/PhpstormProjects/dev/'
-alias skyeye='cd ~/PhpstormProjects/skyeye/'
-alias skynet='cd ~/PhpstormProjects/skynet/'
-alias vrs='cd ~/PhpstormProjects/vrs/'
-alias typd='cd ~/PhpstormProjects/typd/'
-alias route-home='/usr/bin/sudo route add -net 192.168.1 10.5.0.254'
-alias pttimg="ssh bbsu@ptt.cc | ~/.bin/ptt-autopic"
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
