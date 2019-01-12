@@ -1,10 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-ZSH_DISABLE_COMPFIX=true
-
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/pattylaio/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -12,30 +10,32 @@ export ZSH="/Users/pattylaio/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
+# 不要管目錄權限問題，多用戶共用 oh-my-zsh 時會用到
+ZSH_DISABLE_COMPFIX=true
+
 # 左側
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
 	os_icon context laravel_version 
-	dir dir_writable vcs root_indicator ssh
+	dir dir_writable vcs ssh
 )
 
 # 右側
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs ram load time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status ram load time)
 # 若當前登入的帳號為你的帳號 xxx，就不用特別顯示出來
 #DEFAULT_USER="pattylaio"
 # 使用 nerd font 時可以顯示更多 icon。詳情請參考 powerlevel9k wiki 
 POWERLEVEL9K_MODE='nerdfont-complete'
-# HISTORY 顯示時間
-HIST_STAMPS="yyyy-mm-dd"
-
 POWERLEVEL9K_COLOR_SCHEME='light'
 
-POWERLEVEL9K_CONTEXT_TEMPLATE="\uF415"	# '\uF09C'
-
-
+# 客制使用者 root / normal user 顏色及圖示
+POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='yellow'
+POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='white'
+POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND='white'
+POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND='red'
 if [[ $UID == 0 || $EUID == 0 ]]; then
-
+	POWERLEVEL9K_CONTEXT_TEMPLATE=""
 else
-
+	POWERLEVEL9K_CONTEXT_TEMPLATE="\uF415"
 fi
 
 # Set list of themes to pick from when loading at random
@@ -80,7 +80,7 @@ fi
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
