@@ -126,3 +126,4 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias d-web='docker exec -it web /bin/bash'
+alias ss='sudo su -'
