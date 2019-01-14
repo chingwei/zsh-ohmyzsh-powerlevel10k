@@ -15,7 +15,7 @@ ZSH_DISABLE_COMPFIX=true
 
 # 左側
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-	os_icon context laravel_version 
+	os_icon context laravel_version
 	dir dir_writable vcs ssh
 )
 
@@ -23,12 +23,12 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status ram load time)
 # 若當前登入的帳號為你的帳號 xxx，就不用特別顯示出來
 #DEFAULT_USER="pattylaio"
-# 使用 nerd font 時可以顯示更多 icon。詳情請參考 powerlevel9k wiki 
+# 使用 nerd font 時可以顯示更多 icon。詳情請參考 powerlevel9k wiki
 POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_COLOR_SCHEME='light'
+#POWERLEVEL9K_COLOR_SCHEME='light'
 
 # 客制使用者 root / normal user 顏色及圖示
-POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='yellow'
+POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='darkgoldenrod'
 POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='white'
 POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND='white'
 POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND='red'
@@ -37,6 +37,10 @@ if [[ $UID == 0 || $EUID == 0 ]]; then
 else
 	POWERLEVEL9K_CONTEXT_TEMPLATE="\uF415 %m"
 fi
+
+# OS_ICON 顏色設定
+POWERLEVEL9K_OS_ICON_BACKGROUND='yellow'
+POWERLEVEL9K_OS_ICON_FOREGROUND='grey30'
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
