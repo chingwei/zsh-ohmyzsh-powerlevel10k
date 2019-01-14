@@ -131,3 +131,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias d-web='docker exec -it web /bin/bash'
 alias ss='sudo su -'
+alias port='netstat tln '
+alias size="du --max-depth=1 -B M | sort -g"
