@@ -2,45 +2,47 @@
   <img src="http://chingwei.synology.me/img/snapshot.png" alt="Oh My Zsh">
 </p>
 
-套用  oh-my-zsh + powerlevel9k (theme)
+套用  [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh "oh-my-zsh") + [powerlevel9k](https://github.com/bhilburn/powerlevel9k "powerlevel9k") (theme)
 再改成我自已想要的 Style
 
-裡面目前安裝的 submodule 有
 
-#### Plugin
-zsh-autosuggestions
+
+## Plugin
+使用 submodule 的安式來安裝
+
+- zsh-autosuggestions
 ```shell
 git submodule add https://github.com/zsh-users/zsh-autosuggestions.git custom/plugins/zsh-autosuggestions
 ```
-zsh-syntax-highlighting
+- zsh-syntax-highlighting
 ```shell
 git submodule add https://github.com/zsh-users/zsh-syntax-highlighting.git custom/plugins/zsh-syntax-highlighting
 ```
 
-#### Theme
-powerlevel9k (theme)
+## Theme
+- powerlevel9k (theme)
 ```shell
 git submodule add https://github.com/bhilburn/powerlevel9k.git /custom/themes/powerlevel9k
 ```
 
-#### Install
+## Installation
 
-git clone
+- git clone
 ```shell
 git clone https://github.com/chingwei/zsh.git ~/.oh-my-zsh
 ```
 
-建立 .zshrc 的 softlink
+- 建立 .zshrc 的 softlink
 ```shell
 ln -s ~/.oh-my-zsh/zshrc/.zshrc ~/
 ```
 
-安裝 submodule (in .oh-my-zsh folder)
+- 安裝 submodule (in .oh-my-zsh folder)
 ```shell
 git submodule update --init
 ```
 
-Sorce zshrc
+- Sorce zshrc
 ```shell
 source ~/.zshrc
 ```
