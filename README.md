@@ -27,15 +27,15 @@ git submodule add https://github.com/bhilburn/powerlevel9k.git /custom/themes/po
 
 git clone
 ```shell
-git clone https://github.com/chingwei/zsh.git .oh-my-zsh
+git clone https://github.com/chingwei/zsh.git ~/.oh-my-zsh
 ```
 
 建立 .zshrc 的 softlink
 ```shell
-ln -s .oh-my-zsh/zshrc/.zshrc ~/
+ln -s ~/.oh-my-zsh/zshrc/.zshrc ~/
 ```
 
-安裝 submodule
+安裝 submodule (in .oh-my-zsh folder)
 ```shell
 git submodule update --init
 ```
