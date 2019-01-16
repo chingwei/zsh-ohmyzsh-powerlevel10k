@@ -1,12 +1,13 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/chingwei/zsh/master/img/snapshot.png?token=AD03i2cU6BZAdJimQjl6odnCE9zTSalYks5cPxQKwA%3D%3D" alt="Oh My Zsh">
+  <img src="http://chingwei.synology.me/img/snapshot.png" alt="Oh My Zsh">
 </p>
 
 套用  oh-my-zsh + powerlevel9k (theme)
 再改成我自已想要的 Style
 
-安裝的 submodule 有
+裡面目前安裝的 submodule 有
 
+#### Plugin
 zsh-autosuggestions
 ```shell
 git submodule add https://github.com/zsh-users/zsh-autosuggestions.git custom/plugins/zsh-autosuggestions
@@ -15,19 +16,33 @@ zsh-syntax-highlighting
 ```shell
 git submodule add https://github.com/zsh-users/zsh-syntax-highlighting.git custom/plugins/zsh-syntax-highlighting
 ```
+
+#### Theme
 powerlevel9k (theme)
 ```shell
 git submodule add https://github.com/bhilburn/powerlevel9k.git /custom/themes/powerlevel9k
 ```
 
-git clone 後
+#### Install
+
+git clone
+```shell
+git clone https://github.com/chingwei/zsh.git .oh-my-zsh
 ```
+
+建立 .zshrc 的 softlink
+```shell
 ln -s .oh-my-zsh/zshrc/.zshrc ~/
 ```
 
 安裝 submodule
 ```shell
 git submodule update --init
+```
+
+Sorce zshrc
+```shell
+source ~/.zshrc
 ```
 
 ------------
