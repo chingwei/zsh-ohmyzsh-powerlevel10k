@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/chingwei/zsh/master/img/snapshot.png?token=AD03i2cU6BZAdJimQjl6odnCE9zTSalYks5cPxQKwA%3D%3D" alt="Oh My Zsh">
+</p>
+
 套用  oh-my-zsh + powerlevel9k (theme)
 再改成我自已想要的 Style
 
@@ -27,9 +31,6 @@ git submodule update --init
 ```
 
 ------------
-
-
-
 <p align="center">
   <img src="https://s3.amazonaws.com/ohmyzsh/oh-my-zsh-logo.png" alt="Oh My Zsh">
 </p>
