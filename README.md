@@ -1,3 +1,35 @@
+套用  oh-my-zsh + powerlevel9k (theme)
+再改成我自已想要的 Style
+
+安裝的 submodule 有
+
+zsh-autosuggestions
+```shell
+git submodule add https://github.com/zsh-users/zsh-autosuggestions.git custom/plugins/zsh-autosuggestions
+```
+zsh-syntax-highlighting
+```shell
+git submodule add https://github.com/zsh-users/zsh-syntax-highlighting.git custom/plugins/zsh-syntax-highlighting
+```
+powerlevel9k (theme)
+```shell
+git submodule add https://github.com/bhilburn/powerlevel9k.git /custom/themes/powerlevel9k
+```
+
+git clone 後
+```
+ln -s .oh-my-zsh/zshrc/.zshrc ~/
+```
+
+安裝 submodule
+```shell
+git submodule update --init
+```
+
+------------
+
+
+
 <p align="center">
   <img src="https://s3.amazonaws.com/ohmyzsh/oh-my-zsh-logo.png" alt="Oh My Zsh">
 </p>
