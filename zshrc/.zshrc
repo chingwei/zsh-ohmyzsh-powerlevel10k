@@ -26,6 +26,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status ram load time)
 # 使用 nerd font 時可以顯示更多 icon。詳情請參考 powerlevel9k wiki
 POWERLEVEL9K_MODE='nerdfont-complete'
 #POWERLEVEL9K_COLOR_SCHEME='light'
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 # 客制使用者 root / normal user 顏色及圖示
 POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='darkgoldenrod'
