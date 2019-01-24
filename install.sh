@@ -4,7 +4,7 @@ cd ~/.oh-my-zsh
 
 [ -f ~/.zshrc ] && mv ~/.zshrc ~/.zshrc.bak
 
-ln -s ~/.oh-my-zsh/zshrc/.zshrc ~/.zshrc
+ln -s ~/.oh-my-zsh/.zshrc ~/.zshrc
 
 git submodule update --init
 
