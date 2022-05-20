@@ -1,0 +1,4 @@
+This script is for MAC OS.
+
+exec:
+sh zsh-install.sh
