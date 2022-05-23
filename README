@@ -1,3 +1,7 @@
+ZSH + OH-My-ZSH + powerlevel10k
+with plugins
+zsh-syntax-highlighting + zsh-autosuggestions 
+
 This script is for MAC OS.
 
 exec:
