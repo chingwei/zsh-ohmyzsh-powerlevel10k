@@ -5,4 +5,4 @@ zsh-syntax-highlighting + zsh-autosuggestions
 This script is for MAC OS.
 
 exec:
-sh zsh-install.sh
+- bash zsh-install.sh
